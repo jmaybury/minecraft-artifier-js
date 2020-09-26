@@ -1,2 +1,4 @@
 node_modules
 web
+package-lock.json
+static/baked_blocks.json
