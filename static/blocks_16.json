@@ -2982,5 +2982,33 @@
     "survival": true,
     "version": 13,
     "coral": true
+  },
+  {
+    "name": "Crimson Planks",
+    "texture_image": "crimson_planks.png",
+    "game_id": "minecraft:crimson_planks",
+    "game_id_13": "minecraft:crimson_planks",
+    "block_id": 497,
+    "data_id": 0,
+    "luminance": false,
+    "transparency": false,
+    "falling": true,
+    "redstone": false,
+    "survival": true,
+    "version": 16
+  },
+  {
+    "name": "Warped Planks",
+    "texture_image": "warped_planks.png",
+    "game_id": "minecraft:warped_planks",
+    "game_id_13": "minecraft:warped_planks",
+    "block_id": 498,
+    "data_id": 0,
+    "luminance": false,
+    "transparency": false,
+    "falling": true,
+    "redstone": false,
+    "survival": true,
+    "version": 16
   }
 ]
