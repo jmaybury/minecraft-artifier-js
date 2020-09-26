@@ -1,7 +1,7 @@
 const path = require('path')
 const Jimp = require("jimp")
 const fs = require('fs')
-const blocksDb = require('./static/blocks_12.json')
+const blocksDb = require('./static/blocks_16.json')
 const arr = []
 const colors = []
 
@@ -29,7 +29,7 @@ function rgbToHsl(r, g, b){
       l: Math.round(l * 100)
     }
 }
-  
+
 blocksDb.forEach((item, i) => {
     item.id = i + 1
     arr.push(Jimp.read('./static/textures/' + item.texture_image).then(function (image) {
@@ -42,7 +42,7 @@ blocksDb.forEach((item, i) => {
             greenSum += this.bitmap.data[ idx + 1 ]
             blueSum += this.bitmap.data[ idx + 2 ]
         })
-        
+
         let red = Math.round(redSum / (image.bitmap.width * image.bitmap.height))
         let green = Math.round(greenSum / (image.bitmap.width * image.bitmap.height))
         let blue = Math.round(blueSum / (image.bitmap.width * image.bitmap.height))
