@@ -24,8 +24,8 @@ function MineartCanvas() {
         getBlockById(id) {
             if (id == 0) {
                 return null
-            } 
-            return this.blocksDb[id - 1] 
+            }
+            return this.blocksDb[id - 1]
         },
         initFlag: false,
         imageConvertedHex: null,
@@ -78,7 +78,7 @@ function MineartCanvas() {
                 }
                 return false
             },
-            scaleDown() { 
+            scaleDown() {
                 let indexOfCurrent = this.options.indexOf(this.current)
                 if ( indexOfCurrent > 0 ) {
                     this.current = this.options[indexOfCurrent - 1]
@@ -267,36 +267,36 @@ function MineartCanvas() {
         if (id !== 0) {
             let imageForCanvas = store.getBlockById(id).image
 
-            ctxMain.clearRect(x * store.baseCellSize * store.scale.current + store.offset.x, 
-                              y * store.baseCellSize * store.scale.current + store.offset.y, 
-                              store.scale.current * store.baseCellSize, 
+            ctxMain.clearRect(x * store.baseCellSize * store.scale.current + store.offset.x,
+                              y * store.baseCellSize * store.scale.current + store.offset.y,
+                              store.scale.current * store.baseCellSize,
                               store.scale.current * store.baseCellSize)
 
             ctxMain.drawImage(imageForCanvas,
-                              x * store.baseCellSize * store.scale.current + store.offset.x, 
-                              y * store.baseCellSize * store.scale.current + store.offset.y, 
-                              store.scale.current * store.baseCellSize, 
+                              x * store.baseCellSize * store.scale.current + store.offset.x,
+                              y * store.baseCellSize * store.scale.current + store.offset.y,
+                              store.scale.current * store.baseCellSize,
                               store.scale.current * store.baseCellSize)
 
-            ctxTemp.clearRect(x * store.baseCellSize, 
-                              y * store.baseCellSize, 
-                              store.baseCellSize, 
+            ctxTemp.clearRect(x * store.baseCellSize,
+                              y * store.baseCellSize,
+                              store.baseCellSize,
                               store.baseCellSize)
 
             ctxTemp.drawImage(imageForCanvas,
-                              x * store.baseCellSize, 
-                              y * store.baseCellSize, 
-                              store.baseCellSize, 
+                              x * store.baseCellSize,
+                              y * store.baseCellSize,
+                              store.baseCellSize,
                               store.baseCellSize)
         } else {
-            ctxMain.clearRect(x * store.baseCellSize * store.scale.current + store.offset.x, 
-                              y * store.baseCellSize * store.scale.current + store.offset.y, 
-                              store.scale.current * store.baseCellSize, 
+            ctxMain.clearRect(x * store.baseCellSize * store.scale.current + store.offset.x,
+                              y * store.baseCellSize * store.scale.current + store.offset.y,
+                              store.scale.current * store.baseCellSize,
                               store.scale.current * store.baseCellSize)
 
-            ctxTemp.clearRect(x * store.baseCellSize, 
-                              y * store.baseCellSize, 
-                              store.baseCellSize, 
+            ctxTemp.clearRect(x * store.baseCellSize,
+                              y * store.baseCellSize,
+                              store.baseCellSize,
                               store.baseCellSize)
         }
     }
@@ -362,7 +362,7 @@ function MineartCanvas() {
             type: type,
             data: data
         })
-        
+
         const event = store.events.history
         event.details = {
             pos: store.history.currentPos,
@@ -518,7 +518,7 @@ function MineartCanvas() {
               y = store.imageHeight - pos.y - 1
         if (offset) {
             offsetX = offset.x || 0,
-            offsetY = offset.y || 0, 
+            offsetY = offset.y || 0,
             offsetZ = offset.z || 0
         }
 
@@ -634,7 +634,7 @@ function MineartCanvas() {
                 if (store.interface.selection.start !== null) {
                     if (!thisRoot._checkIfInSelection(thisRoot._getIntFromPos(xBlock,yBlock))) { continue }
                 }
-                
+
                 if (thisRoot.getTool() === 'brush') {
                     const row = Math.ceil((i + 1) / size)
                     const col = i % size + 1
@@ -890,7 +890,7 @@ function MineartCanvas() {
             // gets lastleft/lastright visible n/coordsX and draws everything between them
 
             for (let i = Math.ceil(-store.offset.x / store.scale.current / 16 / drawRulerEveryNBlocks) * drawRulerEveryNBlocks;
-                 i <= Math.floor((-store.offset.x + store.canvasWidth) / store.scale.current / 16 / drawRulerEveryNBlocks) * drawRulerEveryNBlocks; 
+                 i <= Math.floor((-store.offset.x + store.canvasWidth) / store.scale.current / 16 / drawRulerEveryNBlocks) * drawRulerEveryNBlocks;
                  i += drawRulerEveryNBlocks) {
                 ctxOverlay.beginPath()
                 ctxOverlay.moveTo(i * store.scale.current * 16 + store.offset.x + 0.5, store.canvasHeight)
@@ -900,7 +900,7 @@ function MineartCanvas() {
             }
 
             for (let i = Math.floor((store.offset.y / 16 / store.scale.current + store.imageHeight) / drawRulerEveryNBlocks) * drawRulerEveryNBlocks;
-                 i >= Math.floor(((store.offset.y - store.canvasHeight) / 16 / store.scale.current + store.imageHeight) / drawRulerEveryNBlocks) * drawRulerEveryNBlocks; 
+                 i >= Math.floor(((store.offset.y - store.canvasHeight) / 16 / store.scale.current + store.imageHeight) / drawRulerEveryNBlocks) * drawRulerEveryNBlocks;
                  i -= drawRulerEveryNBlocks) {
                 ctxOverlay.beginPath()
                 ctxOverlay.moveTo(0, (store.imageHeight - i) * 16 * store.scale.current + store.offset.y + 0.5) // + 0.5 for just the right thickness
@@ -969,14 +969,14 @@ function MineartCanvas() {
             let startOfRenderGridVertical = Math.ceil(-store.offset.x / 16 / store.scale.current)
             let endOfRenderGridVertical = Math.floor((-store.offset.x + store.canvasWidth) / store.scale.current / 16)
 
-            if (startOfRenderGridHorizontal <= 0) { 
+            if (startOfRenderGridHorizontal <= 0) {
                 startOfRenderGridHorizontal = 0
             }
             if (endOfRenderGridHorizontal >= store.imageHeight) {
                 endOfRenderGridHorizontal = store.imageHeight
             }
 
-            if (startOfRenderGridVertical <= 0) { 
+            if (startOfRenderGridVertical <= 0) {
                 startOfRenderGridVertical = 0
             }
             if (endOfRenderGridVertical >= store.imageWidth) {
@@ -1020,7 +1020,7 @@ function MineartCanvas() {
             let size = store.interface.brushSize % 2 === 0 ? store.interface.brushSize + 1 : store.interface.brushSize
             let brushSize = size * store.baseCellSize * store.scale.current
             ctxOverlay.beginPath()
-            
+
             if (thisRoot.getTool() === 'pencil') {
                 let xBlock = (Math.floor((store.controls.mouse.localX - store.offset.x) / (store.baseCellSize * store.scale.current)))
                 let yBlock = (Math.floor((store.controls.mouse.localY - store.offset.y) / (store.baseCellSize * store.scale.current)))
@@ -1056,17 +1056,17 @@ function MineartCanvas() {
             var endPos = thisRoot._getPosFromInt(store.interface.selection.end)
 
             const tempStart = {
-                x: startPos.x <= endPos.x ? startPos.x : endPos.x,  
+                x: startPos.x <= endPos.x ? startPos.x : endPos.x,
                 y: startPos.y <= endPos.y ? startPos.y : endPos.y
             }
 
             const tempEnd = {
-                x: startPos.x > endPos.x ? startPos.x : endPos.x,  
+                x: startPos.x > endPos.x ? startPos.x : endPos.x,
                 y: startPos.y > endPos.y ? startPos.y : endPos.y
             }
 
             ctxOverlay.beginPath();
-            ctxOverlay.rect(tempStart.x * store.baseCellSize * store.scale.current + store.offset.x, 
+            ctxOverlay.rect(tempStart.x * store.baseCellSize * store.scale.current + store.offset.x,
                             tempStart.y * store.baseCellSize * store.scale.current + store.offset.y,
                             (tempEnd.x - tempStart.x  + 1)  * store.baseCellSize * store.scale.current,
                             (tempEnd.y - tempStart.y + 1) * store.baseCellSize * store.scale.current)
@@ -1142,7 +1142,7 @@ function MineartCanvas() {
                             hexBlock = source[y * store.imageWidth + x]
                             if (hexBlock > 0) {
                                 let imageForCanvas = store.getBlockById(hexBlock).image
-                                ctxMain.drawImage(imageForCanvas, 
+                                ctxMain.drawImage(imageForCanvas,
                                               x * store.baseCellSize * store.scale.current + store.offset.x,
                                               y * store.baseCellSize * store.scale.current + store.offset.y,
                                               store.scale.current * store.baseCellSize,
@@ -1164,9 +1164,9 @@ function MineartCanvas() {
                     source = canvasTemp
                 }
                 ctxMain.drawImage(source,
-                      visible.topLeftX * 16, 
-                      visible.topLeftY * 16, 
-                      (visible.bottomRightX - visible.topLeftX) * 16, 
+                      visible.topLeftX * 16,
+                      visible.topLeftY * 16,
+                      (visible.bottomRightX - visible.topLeftX) * 16,
                       (visible.bottomRightY - visible.topLeftY) * 16,
                       offsetX,
                       offsetY,
@@ -1187,18 +1187,18 @@ function MineartCanvas() {
                   store.originalImage.y,
                   store.originalImage.width,
                   store.originalImage.height,
-                  store.offset.x, 
-                  store.offset.y, 
-                  store.imageWidth * store.baseCellSize * store.scale.current, 
+                  store.offset.x,
+                  store.offset.y,
+                  store.imageWidth * store.baseCellSize * store.scale.current,
                   store.imageHeight * store.baseCellSize * store.scale.current)
         }
 
         function renderBackground() {
             ctxMain.fillStyle = 'rgba(100, 100, 100, 0.45)'
             ctxMain.fillRect(0, 0, store.canvasWidth, store.canvasHeight)
-            ctxMain.clearRect(store.offset.x, 
-                              store.offset.y, 
-                              store.imageWidth * store.baseCellSize * store.scale.current, 
+            ctxMain.clearRect(store.offset.x,
+                              store.offset.y,
+                              store.imageWidth * store.baseCellSize * store.scale.current,
                               store.imageHeight * store.baseCellSize * store.scale.current)
         }
 
@@ -1225,7 +1225,7 @@ function MineartCanvas() {
                 }
             })
         }
-        
+
         const renderList = {
             'RENDER_MAIN': renderMain,
             'RENDER_ORIGINAL': renderOriginal,
@@ -1277,7 +1277,7 @@ function MineartCanvas() {
             y: store.imageHeight - yBlock,
             info: store.getBlockById(this._getBlockIdByPosition(xBlock, yBlock)),
             blockPos: xBlock + yBlock * store.imageWidth
-        } 
+        }
     }
 
     this.setImageSizes = (w, h) => {
@@ -1362,13 +1362,13 @@ function MineartCanvas() {
 
     this.setBrushSize = (int) => {
         if (int < 1) {
-            store.interface.brushSize = 1 
+            store.interface.brushSize = 1
         } else if(int > store.settings.maxBrushSize) {
             store.interface.brushSize = store.settings.maxBrushSize
         } else {
             store.interface.brushSize = int
         }
-        this._renderOverlayCanvas()      
+        this._renderOverlayCanvas()
     }
 
     this.undoOnce = () => {
@@ -1473,7 +1473,7 @@ function MineartCanvas() {
             if (facing === 'south' || facing === 'east') {
                 int = (store.imageHeight - Math.ceil((i + 1) / store.imageWidth)) * store.imageWidth + (i % store.imageWidth)
             } else if (facing === 'north' || facing === 'west') {
-                int = store.imageConvertedHex.length - i - 1 
+                int = store.imageConvertedHex.length - i - 1
             }
             const pos = this._getPosFromInt(int)
             const block = store.getBlockById(this._getBlockIdByPosition(pos.x, pos.y))
@@ -1494,7 +1494,7 @@ function MineartCanvas() {
                 blockIds.push(0)
                 dataIds.push(0)
             }
-            
+
         }
 
         switch (facing) {
@@ -1533,7 +1533,7 @@ function MineartCanvas() {
             TileEntities: { type: 'list', value: {
                 type: 'compound',
                 value: []
-                } 
+                }
             },
             WEOffsetX: { type: 'int', value: offsetX },
             WEOffsetY: { type: 'int', value: 0 },
@@ -1612,7 +1612,7 @@ function MineartCanvas() {
                 commandBlockCartId = 'commandblock_minecart'
                 killCommand = `kill @e[type=${commandBlockCartId},r=2]`
                 break
-            case 13:
+            default:
                 fallingBlockId = 'falling_block'
                 commandBlockCartId = 'command_block_minecart'
                 killCommand = `kill @e[type=${commandBlockCartId},distance=..2]`
