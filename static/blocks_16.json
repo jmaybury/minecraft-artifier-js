@@ -3141,9 +3141,9 @@
   },
   {
     "name": "Block of Netherite",
-    "texture_image": "	netherite_block.png",
-    "game_id": "minecraft:	netherite_block",
-    "game_id_13": "minecraft:	netherite_block",
+    "texture_image": "netherite_block.png",
+    "game_id": "minecraft:netherite_block",
+    "game_id_13": "minecraft:netherite_block",
     "block_id": 525,
     "data_id": 0,
     "luminance": false,
