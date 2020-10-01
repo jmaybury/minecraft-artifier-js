@@ -3047,7 +3047,7 @@
     "block_id": 473,
     "data_id": 0,
     "luminance": false,
-    "transparency": false,
+    "transparency": true,
     "falling": true,
     "redstone": false,
     "survival": true,
@@ -3123,21 +3123,6 @@
     "redstone": false,
     "survival": true,
     "version": 16
-  },
-  {
-    "name": "Blackstone (Top)",
-    "texture_image": "blackstone_top.png",
-    "game_id": "minecraft:blackstone",
-    "game_id_13": "minecraft:blackstone",
-    "block_id": 528,
-    "data_id": 0,
-    "luminance": false,
-    "transparency": false,
-    "falling": true,
-    "redstone": false,
-    "survival": true,
-    "version": 16,
-    "axis": true
   },
   {
     "name": "Block of Netherite",
