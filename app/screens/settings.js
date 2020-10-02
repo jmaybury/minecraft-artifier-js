@@ -372,6 +372,13 @@ const store = {
                         }
                     })
                 }
+				if (document.querySelector('input[name=include-coral]').checked === false) {
+                    store.parent.blocksDefault.forEach((item) => {
+                        if (item.coral === true) {
+                            excludeArr.push(item.id)
+                        }
+                    })
+                }
             }
             const version = parseInt(this.$version.value)
             if (version < 13) {
