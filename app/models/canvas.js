@@ -547,7 +547,7 @@ function MineartCanvas() {
                 game_id: 'minecraft:air'
             }
         }
-        if (store.settings.minecraftVersion === 13) {
+        if (store.settings.minecraftVersion >= 13) {
             gameId = block['game_id_13']
         } else {
             gameId = block.game_id
